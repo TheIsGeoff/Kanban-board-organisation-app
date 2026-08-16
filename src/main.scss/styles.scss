@@ -36,6 +36,10 @@ body {
     z-index: 99999;
 
     background-color: $main-color;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .app-project-name-wrapper {
@@ -91,6 +95,8 @@ body {
     min-width: 300px;
     height: fit-content;
     margin-left: 12px;
+
+    margin-top: 1.5px;
 }
 
 .create-column-button {
@@ -136,7 +142,7 @@ body {
     border-radius:22px;
     background-color: $background-secondary;
 
-    box-shadow: 0px 1px 0px 0px rgba(255,255,255,0.75) inset, 0px 1px 0px 0px rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 0px 1px rgba(255,255,255,0.75) inset, 0px 0px 0px 1.5px rgba(0, 0, 0, 0.1);
 }
 
 .app-column-header {
@@ -242,7 +248,7 @@ body {
 }
 
 .app-card {
-    background-color: $border;
+    background-color: rgba($border, 0.05);
     border-radius: 12px;
     margin-bottom: 6px;
 
@@ -333,4 +339,62 @@ body {
     background-color: #26d92c26;
     color: #26D92C;
     display: none;
+}
+
+.app-upload-download-button-wrapper {
+    height: 32px;
+
+    background-color: $background-secondary;
+    border-radius: 12px;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-top: 1px solid $background-main;
+    border-bottom: 1px solid $background-secondary;
+
+    box-shadow: 0px 0px 0px 1.5px rgba(0, 0, 0, 0.05);
+
+    >button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+
+        border: none;
+        outline: none;
+        background-color: $background-main;
+
+        height: 32px;
+
+        cursor: pointer;
+
+        font-weight: 600;
+
+        color: $text-main;
+
+        &:hover {
+            background-color: $background-secondary;
+        }
+
+        >svg {
+            width: 18px;
+        }
+    }
+}
+
+.app-download-button {
+    padding: 0px 8px;
+    margin-right: 1px;
+
+    >svg {
+        margin-right: 6px;
+    }
+}
+
+.app-download-menu-button {
+    width: 32px;
+    padding-right: 2px;
 }
