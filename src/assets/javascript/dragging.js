@@ -97,6 +97,9 @@ function dragElement(element) {
     }
 
     function closeDragElement() {
+
+        saveBoardData(); // Save data to local storage
+
         // stop moving when mouse button is released:
         document.onmouseup = null;
         document.onmousemove = null;
