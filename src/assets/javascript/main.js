@@ -7,22 +7,20 @@ const projectName = document.getElementById("projectName")
 // Define column width
 var columnWidth = 300;
 
-// create project file
-var projectFile = {}
+var projectFile = {} // create project file
 
-var columnCount = 0;
+var columnCount = 0; // Number of columns
 
 // Once page loaded
-window.addEventListener('load', function() {
+window.addEventListener('load', function() { loadPageContent(); })
+
+// Refreshes the page content with the current project file data
+function loadPageContent() {
 
     projectFile = getBoardData(); // Get project data
+    columnCount = projectFile.columns.length; // Get column count
 
-    columnCount = projectFile.columns.length;
-
-    console.log(projectFile); // Log project data to console
-
-    // Clear all columns
-    columnContainer.innerHTML = "";
+    columnContainer.innerHTML = ""; // Clear all previous columns
 
     // Load the project files name into the name input
     projectName.value = projectFile.title;
@@ -36,4 +34,4 @@ window.addEventListener('load', function() {
     for (let i = 0; i < projectFile.cards.length; i++) {
         generateCard(projectFile.cards[i]); // Generate and append card from card data at [i] in "cards": []
     }
-})
+}

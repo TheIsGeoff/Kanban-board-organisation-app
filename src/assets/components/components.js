@@ -32,7 +32,7 @@ function generateCard(cardContent) {
     
     var card = document.createElement('div') // Create the card element and store in var "card"
     card.className = "app-card"; // Append class names to card
-    card.id = cardContent.id + "Card";
+    card.id = "card-" + cardContent.id;
     card.innerHTML=`
         <div class="draggable-card" data-card-id="`+ cardContent.id + `">
             <p>` + cardContent.text + `</p>
