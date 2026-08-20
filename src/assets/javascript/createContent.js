@@ -1,4 +1,5 @@
 
+// Create card function
 function createCard(text, columnId) {
 
     var cardId = generateID();
@@ -9,7 +10,6 @@ function createCard(text, columnId) {
 
         "text": text,
         "date": "null"
-
         // More data can be added here, such as card color, card tags, card description, etc.
     }
 
@@ -17,9 +17,23 @@ function createCard(text, columnId) {
 
     saveBoardData();
 
-    for (let i = 0; i < projectFile.cards.length; i++) {
-        if (projectFile.cards[i].id == cardId) {
-            generateCard(projectFile.cards[i]); // Generate and append card from card data at [i] in "cards": []
-        }
+    generateCard(card);
+}
+
+function createColumn(title) {
+
+    var columnId = generateID();
+
+    var column = {
+        "id": columnId,
+        "title": title,
     }
+
+    projectFile.columns.push(column)
+
+    
+    saveBoardData();
+
+    generateColumn(column)
+
 }

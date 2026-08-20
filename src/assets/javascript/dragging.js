@@ -35,10 +35,12 @@ function dragElement(element) {
 
         var columnPoz = columnContainer.getBoundingClientRect(); // Detect column scroll
 
-        if (Math.ceil((e.clientX - columnPoz.left) / columnWidth) > columnCount) {
+        console.log(columnPoz.left + " " + e.clientX)
+
+        if (Math.ceil(((e.clientX - columnPoz.left) / columnWidth) > columnCount)) {
             columnSnap = 0 // Set column snap to zero if it exeeds number of real columns
         } else {
-            columnSnap = Math.ceil((e.clientX / columnWidth))
+            columnSnap = Math.ceil(((e.clientX - columnPoz.left) / columnWidth))
 
             var activeColumn = document.getElementById(projectFile.columns[columnSnap - 1].id + "Content");
 
@@ -53,6 +55,7 @@ function dragElement(element) {
                     console.log(snapLocation)
 
                 } else {
+                    
                     snapHeight = snapHeight + child.offsetHeight + 6;
                     snapLocation = snapLocation + 1;
 
