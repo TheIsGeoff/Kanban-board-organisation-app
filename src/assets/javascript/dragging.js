@@ -55,7 +55,7 @@ function dragElement(element) {
                     console.log(snapLocation)
 
                 } else {
-                    
+
                     snapHeight = snapHeight + child.offsetHeight + 6;
                     snapLocation = snapLocation + 1;
 
@@ -89,6 +89,7 @@ function dragElement(element) {
             }
         }
 
+        element.style.position = "static"
         // Update location
         elementChild.style.top = (elementChild.offsetTop - newY) + "px";
         elementChild.style.left = (elementChild.offsetLeft - newX) + "px";
@@ -107,6 +108,7 @@ function dragElement(element) {
         document.onmouseup = null;
         document.onmousemove = null;
 
+        element.style.position = "relative"
         // Reset styles and location to the box
         elementChild.style.top = "";
         elementChild.style.left = "";

@@ -15,8 +15,20 @@ function generateColumn(columnContent) {
             </div>
         </header>
         <div class="column-content-container" id="` + columnContent.id +`Content"></div>
+        <div class="app-column-create-card">
+            <textarea class="app-create-card-input" placeholder="Enter a title"></textarea>
+            <div class="app-column-button-row">
+                <button data-column-id="`+ columnContent.id + `" onclick="onAddCard(this)" class="app-generate-card-button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                    Add Card
+                </button>
+                <button data-column-id="`+ columnContent.id + `" onclick="closeAddCard(this)" class="app-close-button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">    <path        d="M18 6L6 18M6 6L18 18"        stroke="currentColor"        stroke-width="2"        stroke-linecap="round"        stroke-linejoin="round"    /></svg>
+                </button>
+            </div>
+        </div></div>
         <div class="app-column-footer">
-            <button data-column-id="`+ columnContent.id + `" class="app-create-card">
+            <button onclick="openAddCard(this)" data-column-id="`+ columnContent.id + `" class="app-create-card">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
                 Add Card
             </button>
