@@ -19,6 +19,8 @@ $text-main: #0F2346;
 $text-secondary: #5E6B82;
 $text-light: #ffffff;
 
+// Body and app styling
+
 body {
     background-color: $main-color;
 
@@ -27,6 +29,8 @@ body {
     overflow: scroll;
     user-select: none;
 }
+
+// Header styling
 
 .app-header {
     padding:24px;
@@ -74,6 +78,8 @@ body {
     color: $text-light;
 }
 
+// Main app styling
+
 .app {
     min-height: calc(100vh - 80px);
     width: 100%;
@@ -88,6 +94,8 @@ body {
     padding-top: 80px;
     
 }
+
+// Column styling
 
 .app-column {
     width: 100%;
@@ -145,262 +153,7 @@ body {
     box-shadow: 0px 0px 0px 1px rgba(255,255,255,0.75) inset, 0px 0px 0px 1.5px rgba(0, 0, 0, 0.1);
 }
 
-.app-column-header {
-    height:55px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0px 18px;
-    padding-right: 12px;
-}
-
-.column-title {
-    font-size: 16px;
-    color: $text-main;
-}
-
-.column-header-left {
-    display:flex;
-    flex-direction:row;
-    align-items: center;
-}
-
-.column-button, .app-create-card {
-    width: 32px;
-    min-width: 32px;
-    height: 32px;
-
-    display:flex;
-    align-items: center;
-    justify-content: center;
-
-    margin-left: 6px;
-
-    border-radius: 20px;
-    
-    color: $text-secondary;
-
-    background-color:transparent;
-    outline: transparent;
-    border: none;
-    cursor: pointer;
-
-    transition: all 0.2s cubic-bezier(.71,-0.01,0,1.05);
-
-    >svg {
-        width: 18px;
-        height: 18px;
-    }
-
-    &:hover {
-        background-color: $background-main;
-    }
-    &:active {
-        transform: scale(0.9);
-    }
-}
-
-.column-content-container {
-    padding: 0px 12px;
-    max-height: calc(100dvh - 290px);
-    overflow-y: scroll;
-    :last-child {
-        margin-bottom: 0px !important;
-    }
-}
-
-.columns {
-    display: flex;
-    flex-direction: row;
-    height: fit-content;
-}
-
-.app-create-card {
-    border-radius: 16px;
-    width: 100%;
-    height: 32px;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-
-    margin: 0px;
-    font-size: 16px;
-
-    font-weight: 500;
-    
-    >svg {
-        margin: 0px 8px;
-    }
-
-    &:active {
-        transform: scale(0.98, 0.95);
-    }
-}
-
-.app-column-footer {
-    height:55px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0px 12px;
-    padding-left: 10px;
-
-}
-
-.app-card {
-    background-color: rgba($border, 0.05);
-    border-radius: 12px;
-    margin-bottom: 6px;
-
-    height: fit-content;
-    position: relative;
-}
-
-.draggable-card {
-    padding: 12px 12px 12px 12px;
-
-    position: absolute;
-    width: 276px;
-
-    >p {
-        padding: 0px 2px;
-    }
-
-    background-color: $background-main;
-    border: 1.5px solid $border;
-    border-bottom: 2px solid $border;
-    border-radius: 12px;
-
-    cursor: grab;
-
-    &:active {
-        cursor: grabbing;
-    }
-}
-
-.app-card-menu-bar {
-    height: 20px;
-    margin-top: 6px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.app-card-edit-button {
-    width: 20px;
-    min-width: 20px;
-    height: 20px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    color: $text-secondary;
-
-    background-color:transparent;
-    outline: transparent;
-    border: none;
-
-    overflow: hidden;
-
-    :hover {
-        background-color: $background-secondary;
-    }
-
-    cursor: pointer;
-
-    >svg {
-        border-radius: 6px;
-        width: 18px;
-        height: 18px;
-    }
-}
-
-.app-card-chip {
-    height: 20px;
-    background-color: $background-secondary;
-    padding: 2px 8px;
-    border-radius: 5px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    font-weight: 500;
-
-    >svg {
-        width: 12px;
-        height: 12px;
-        margin-right: 4px;
-    }
-}
-
-.app-card-chip-date {
-    background-color: #26d92c26;
-    color: #26D92C;
-    display: none;
-}
-
-.app-upload-download-button-wrapper {
-    height: 32px;
-
-    background-color: $background-secondary;
-    border-radius: 12px;
-    overflow: hidden;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-top: 1px solid $background-main;
-    border-bottom: 1px solid $background-secondary;
-
-    box-shadow: 0px 0px 0px 1.5px rgba(0, 0, 0, 0.05);
-
-    >button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: row;
-
-        border: none;
-        outline: none;
-        background-color: $background-main;
-
-        height: 32px;
-
-        cursor: pointer;
-
-        font-weight: 600;
-
-        color: $text-main;
-
-        &:hover {
-            background-color: $background-secondary;
-        }
-
-        >svg {
-            width: 18px;
-        }
-    }
-}
-
-.app-download-button {
-    padding: 0px 8px;
-    margin-right: 1px;
-
-    >svg {
-        margin-right: 6px;
-    }
-}
-
-.app-download-menu-button {
-    width: 32px;
-    padding-right: 2px;
-}
+// create card styling
 
 .app-column-create-card {
     padding: 0px 12px;
@@ -499,4 +252,231 @@ body {
     align-items: center;
     justify-content: left;
     flex-direction: row;
+}
+
+
+// Column header and footer styling
+
+.app-column-footer, .app-column-header {
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 12px 12px;
+}
+
+.column-title {
+    font-size: 16px;
+    color: $text-main;
+
+    margin-left: 10px;
+}
+
+.column-header-left {
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+}
+
+.column-button, .app-create-card {
+    width: 32px;
+    min-width: 32px;
+    height: 32px;
+
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: 6px;
+
+    border-radius: 20px;
+    
+    color: $text-secondary;
+
+    background-color:transparent;
+    outline: transparent;
+    border: none;
+    cursor: pointer;
+
+    transition: all 0.2s cubic-bezier(.71,-0.01,0,1.05);
+
+    >svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    &:hover {
+        background-color: $background-main;
+    }
+    &:active {
+        transform: scale(0.9);
+    }
+}
+
+.column-content-container {
+    padding: 0px 12px;
+    max-height: calc(100dvh - 290px);
+    overflow-y: scroll;
+    :last-child {
+        margin-bottom: 0px !important;
+    }
+}
+
+.columns {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+}
+
+.app-create-card {
+    border-radius: 16px;
+    width: 100%;
+    height: 32px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+    margin: 0px;
+    font-size: 16px;
+
+    font-weight: 500;
+    
+    >svg {
+        margin: 0px 8px;
+    }
+
+    &:active {
+        transform: scale(0.98, 0.95);
+    }
+}
+
+// Card styling
+
+.app-card {
+    background-color: rgba($border, 0.05);
+
+    border-radius: 10px;
+    margin-bottom: 6px;
+
+    height: fit-content;
+    position: relative;
+}
+
+.draggable-card {
+    padding: 12px;
+
+    position: absolute;
+    width: 276px;
+
+    background-color: $background-main;
+    border: 1.5px solid $border;
+    border-radius: 10px;
+
+    cursor: grab;
+
+    >p {
+        padding: 0px 2px;
+    } 
+}
+
+.app-card-menu-bar {
+    height: 20px;
+    margin-top: 6px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.app-card-edit-button {
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: $text-secondary;
+
+    background-color:transparent;
+    outline: transparent;
+    border: none;
+
+    overflow: hidden;
+
+    :hover {
+        background-color: $background-secondary;
+    }
+
+    cursor: pointer;
+
+    >svg {
+        border-radius: 6px;
+        width: 18px;
+        height: 18px;
+    }
+}
+
+// Upload / Download button styling // To update
+
+.app-upload-download-button-wrapper {
+    height: 32px;
+
+    background-color: $background-secondary;
+    border-radius: 12px;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-top: 1px solid $background-main;
+    border-bottom: 1px solid $background-secondary;
+
+    box-shadow: 0px 0px 0px 1.5px rgba(0, 0, 0, 0.05);
+
+    >button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+
+        border: none;
+        outline: none;
+        background-color: $background-main;
+
+        height: 32px;
+
+        cursor: pointer;
+
+        font-weight: 600;
+
+        color: $text-main;
+
+        &:hover {
+            background-color: $background-secondary;
+        }
+
+        >svg {
+            width: 18px;
+        }
+    }
+}
+
+.app-download-button {
+    padding: 0px 8px;
+    margin-right: 1px;
+
+    >svg {
+        margin-right: 6px;
+    }
+}
+
+.app-download-menu-button {
+    width: 32px;
+    padding-right: 2px;
 }
