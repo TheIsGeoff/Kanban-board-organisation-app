@@ -5,6 +5,12 @@ function openAddCard(element) {
     const columnFooter = column.getElementsByClassName("app-column-footer")[0];
 
     var createContainers = document.getElementsByClassName("app-column-create-card");
+    var columnFooters = document.getElementsByClassName("app-column-footer");
+
+    for(var i = 0; i < createContainers.length; i++) {
+        createContainers[i].style.display = "none";
+        columnFooters[i].style.display = "flex";
+    }
 
     createContainer.style.display = "block";
     columnFooter.style.display = "none";

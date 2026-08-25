@@ -97,7 +97,7 @@ function dragElement(element) {
         elementChild.style.transform = "rotate(2deg)";
         elementChild.style.zIndex = "999";
         elementChild.style.cursor = "grabbing";
-        elementChild.style.boxShadow = "2px 8px 16px #0000001b";
+        elementChild.style.boxShadow = "2px 8px 16px #00000042";
     }
 
     function closeDragElement() {

@@ -97,7 +97,29 @@ function getBoardData() {
 
     };
 
-    return placeholderData;
+        const templateData = {
+        "title": "My Personal Board",
+        "columns": [
+            {
+                "id": "9vy1YP2hWgCq",
+                "title": "To Do"
+            },
+            {
+                "id": "fzNENbuEzYi9",
+                "title": "Doing"
+            },
+            {
+                "id": "OWoVTLOA5TW2",
+                "title": "Done"
+            }
+        ],
+        "cards": [
+            
+        ],
+
+    };
+
+    return templateData;
 }
 
 function saveBoardData() {
