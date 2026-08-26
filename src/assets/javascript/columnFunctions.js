@@ -15,6 +15,7 @@ function openAddCard(element) {
     createContainer.style.display = "block";
     columnFooter.style.display = "none";
 
+    createContainer.getElementsByClassName("app-create-card-input")[0].value = "";
     createContainer.getElementsByClassName("app-create-card-input")[0].focus();
 }
 

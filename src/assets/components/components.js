@@ -20,7 +20,7 @@ function generateColumn(columnContent) {
         </header>
         <div class="column-content-container" id="` + columnContent.id +`Content"></div>
         <div class="app-column-create-card">
-            <textarea data-column-id="`+ columnContent.id + `" class="app-create-card-input" placeholder="Enter a title"></textarea>
+            <textarea maxLength="120" data-column-id="`+ columnContent.id + `" class="app-create-card-input" placeholder="Enter a title"></textarea>
             <div class="app-column-button-row">
                 <button data-column-id="`+ columnContent.id + `" onclick="onAddCard(this)" class="app-generate-card-button">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
