@@ -99,6 +99,9 @@ function dragElement(element) {
         elementChild.style.cursor = "grabbing";
         elementChild.style.boxShadow = "2px 8px 16px #00000042";
         elementChild.style.outline = "2px solid white"
+
+        elementChild.getElementsByClassName("card-btn")[0].style.display = "none";
+        elementChild.getElementsByClassName("card-btn")[1].style.display = "none";
     }
 
     function closeDragElement() {
@@ -118,5 +121,8 @@ function dragElement(element) {
         elementChild.style.cursor = ""
         elementChild.style.boxShadow = ""
         elementChild.style.outline = ""
+
+        elementChild.getElementsByClassName("card-btn")[0].style.display = "flex";
+        elementChild.getElementsByClassName("card-btn")[1].style.display = "flex";
     }
 }

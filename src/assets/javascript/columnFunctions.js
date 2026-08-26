@@ -48,3 +48,15 @@ function onAddCard(element) {
 
     }
 }
+
+// Create cards on ENTER
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        if(document.activeElement.classList.contains("app-create-card-input")) {
+
+            event.preventDefault()
+
+            onAddCard(document.activeElement)
+        };
+    }
+});
