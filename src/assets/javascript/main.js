@@ -1,15 +1,15 @@
-// Get column container
+// Get column container and project name input
 const columnContainer = document.getElementById("columns")
-
-// Get the project name input
 const projectName = document.getElementById("projectName")
 
-// Define column width
+// Define column width px
 var columnWidth = 300;
 
-var projectFile = {} // create project file
+// create project file
+var projectFile = {} 
 
-var columnCount = 0; // Number of columns
+// Number of columns
+var columnCount = 0;
 
 // Once page loaded
 window.addEventListener('load', function() { loadPageContent(); })
@@ -34,4 +34,6 @@ function loadPageContent() {
     for (let i = 0; i < projectFile.cards.length; i++) {
         generateCard(projectFile.cards[i]); // Generate and append card from card data at [i] in "cards": []
     }
+
+    updateColumnCounts()
 }

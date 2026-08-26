@@ -97,7 +97,7 @@ function getBoardData() {
 
     };
 
-        const templateData = {
+    const templateData = {
         "title": "My Personal Board",
         "columns": [
             {
@@ -116,7 +116,6 @@ function getBoardData() {
         "cards": [
             
         ],
-
     };
 
     return templateData;
@@ -125,6 +124,8 @@ function getBoardData() {
 function saveBoardData() {
 
     console.log("Saving data placeholder")
+
+    updateColumnCounts()
 
     // To implement, saving data to local storage
 }

@@ -18,6 +18,8 @@ function createCard(text, columnId) {
     saveBoardData();
 
     generateCard(card);
+
+    updateColumnCounts()
 }
 
 function createColumn(title) {
@@ -31,7 +33,6 @@ function createColumn(title) {
 
     projectFile.columns.push(column)
 
-    
     saveBoardData();
 
     generateColumn(column)

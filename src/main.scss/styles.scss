@@ -59,13 +59,14 @@ body {
 }
 
 .app-project-name-wrapper:hover, .app-project-name-wrapper:focus-within {
-    background-color: black;
+    background-color: $background-main;
     border-radius:10px;
 }
 
 
 .app-project-name-input {
-    width: 200px;
+    width: fit-content;
+    min-width: 150px;
     padding: 6px 6px;
 
     background-color:transparent;
@@ -353,7 +354,8 @@ body {
     border-radius: 0px;
 
     &:hover {
-        background-color: $border;
+        filter: brightness(1.1);
+        background-color: $background-main;
     }
 
     &:active {
@@ -428,10 +430,21 @@ body {
 
     cursor: grab;
 
+    outline-offset: -1px;
+
+    &:hover > div > .card-btn {
+        display: flex;
+    }
+
 }
 
 .card-header {
     height: 32px;
+    padding: 4px;
+
+    display: flex;
+    align-items: center;
+    justify-content: right;
 
     background-color: #94c748;
 
@@ -495,6 +508,43 @@ body {
         border-radius: 6px;
         width: 18px;
         height: 18px;
+    }
+}
+
+.card-btn {
+    background-color: $background-main;
+    border: none;
+    outline: none;
+    color: $text-secondary;
+
+    width: 48px;
+    height: 24px;
+
+    >svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    margin-left: 2px;
+
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    display: none;
+
+    cursor: pointer;
+
+    transition: all 0.2s cubic-bezier(.71,-0.01,0,1.05);
+
+    &:hover {
+        filter: brightness(1.1);
+    }
+
+    &:active {
+        transform: scale(0.9);
     }
 }
 

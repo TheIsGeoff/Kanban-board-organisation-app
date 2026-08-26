@@ -98,6 +98,7 @@ function dragElement(element) {
         elementChild.style.zIndex = "999";
         elementChild.style.cursor = "grabbing";
         elementChild.style.boxShadow = "2px 8px 16px #00000042";
+        elementChild.style.outline = "2px solid white"
     }
 
     function closeDragElement() {
@@ -116,5 +117,6 @@ function dragElement(element) {
         elementChild.style.zIndex = ""
         elementChild.style.cursor = ""
         elementChild.style.boxShadow = ""
+        elementChild.style.outline = ""
     }
 }
