@@ -161,6 +161,18 @@ body {
 .column-card-count {
     color: $text-secondary;
     margin-left: 8px;
+    padding: 0px 8px;
+
+    min-width: 27px;
+    min-height: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background-color: $background-main;
 }
 
 // create card styling
@@ -376,6 +388,9 @@ body {
     padding: 0px 12px;
     max-height: calc(100dvh - 290px);
     overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-color: $background-main transparent;
+    scrollbar-width: thin;
     :last-child {
         margin-bottom: 0px !important;
     }
@@ -419,6 +434,8 @@ body {
 
     height: fit-content;
     position: relative;
+
+    height: var(--card-height);
 }
 
 .draggable-card {
@@ -553,6 +570,35 @@ body {
         transform: scale(0.9);
     }
 }
+
+
+.app-snap-card-transition {
+    animation: cardHeightAnimation 0.4s cubic-bezier(0,1.24,1,1);
+}
+
+
+@keyframes cardHeightAnimation {
+    0% {
+        height: 0px;
+    }
+    100% {
+        height: var(--card-height);
+    }
+}
+
+.app-card-transition {
+    animation: placeCardAnimation 0.3s cubic-bezier(0,1,0,1);
+}
+
+@keyframes placeCardAnimation {
+    0% {
+        transform: scale(0.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 
 // Upload / Download button styling // To update
 

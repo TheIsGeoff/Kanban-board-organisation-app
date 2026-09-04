@@ -2,17 +2,13 @@
 const columnContainer = document.getElementById("columns")
 const projectName = document.getElementById("projectName")
 
-// Define column width px
 var columnWidth = 300;
-
-// create project file
 var projectFile = {} 
-
-// Number of columns
 var columnCount = 0;
 
-// Once page loaded
-window.addEventListener('load', function() { loadPageContent(); })
+window.addEventListener('load', function() {
+    loadPageContent(); 
+});
 
 // Refreshes the page content with the current project file data
 function loadPageContent() {

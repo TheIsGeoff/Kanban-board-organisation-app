@@ -2,7 +2,9 @@
 
 function generateColumn(columnContent) {
 
-    var column = document.createElement('div')
+    const columnContainer = document.getElementById("columns")
+    const column = document.createElement('div')
+
     column.className = "app-column app-custom-column";
     column.id = columnContent.id;
 
@@ -46,7 +48,9 @@ function generateColumn(columnContent) {
 
 function generateCard(cardContent) {
     
-    var card = document.createElement('div') // Create the card element and store in var "card"
+    const cardsColumn =  document.getElementById(cardContent.columnId + "Content")
+    const card = document.createElement('div') // Create the card element and store in var "card"
+
     card.className = "app-card"; // Append class names to card
     card.id = "card-" + cardContent.id;
     card.innerHTML=`
@@ -64,11 +68,11 @@ function generateCard(cardContent) {
         </div>
     `;
 
-    document.getElementById(cardContent.columnId + "Content").appendChild(card); // Append card to the relevent column
+    cardsColumn.appendChild(card); // Append card to the relevent column
 
-    console.log(document.getElementById(card.id).children[0].offsetHeight)
+    var cardHeight = card.children[0].offsetHeight + "px";
+    card.style.setProperty('--card-height', cardHeight)
 
-    document.getElementById(card.id).style.height = document.getElementById(card.id).children[0].offsetHeight + "px";
-
-    dragElement(document.getElementById(card.id));
+    dragElement(card); // Activate Dragging
+    
 };

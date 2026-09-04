@@ -15,11 +15,10 @@ function createCard(text, columnId) {
 
     projectFile.cards.push(card);
 
-    saveBoardData();
-
     generateCard(card);
 
-    updateColumnCounts()
+    onDomUpdated()
+
 }
 
 function createColumn(title) {
@@ -33,8 +32,10 @@ function createColumn(title) {
 
     projectFile.columns.push(column)
 
-    saveBoardData();
-
     generateColumn(column)
+
+    onDomUpdated()
+
+    columnCount ++;
 
 }

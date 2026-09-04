@@ -11,10 +11,10 @@ function deleteCard(element) {
 
             delete projectFile.cards[i];
             projectFile.cards.splice(i,1);  
+            
         }
-    }
 
-    console.log(JSON.stringify(projectFile.cards))
+    }
 
     updateColumnCounts()
 

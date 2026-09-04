@@ -4,6 +4,7 @@ function dragElement(element) {
 
     var mouseX = 0, mouseY = 0, newX = 0, newY = 0;
     var elementChild = element.children[0];
+    var previousColumnSnap = null;
     
     elementChild.onmousedown = dragMouseDown;
 
@@ -71,8 +72,16 @@ function dragElement(element) {
                 snapLocation = snapLocation - 1;
             }
 
+            // Append card to the new column
             activeColumn.prepend(element)
-            
+
+            console.log("Column snap location: " + columnSnap)
+            //if (columnSnap != previousColumnSnap) {
+            //    element.classList.add("app-snap-card-transition")
+            //    console.log("column snap: " + columnSnap + ", previous snap: " + previousColumnSnap)
+            //}
+
+            // Append card to the new column at the correct location
             if (activeColumn.children[snapLocation]) {
                 activeColumn.children[snapLocation].after(element)
             }
@@ -87,18 +96,21 @@ function dragElement(element) {
                     
                 }
             }
+
+            console.log("Previous column snap: " + previousColumnSnap)
+            previousColumnSnap = columnSnap;
         }
 
         element.style.position = "static"
+        element.classList.remove("app-card-transition")
         // Update location
         elementChild.style.top = (elementChild.offsetTop - newY) + "px";
         elementChild.style.left = (elementChild.offsetLeft - newX) + "px";
         // Update styles
-        elementChild.style.transform = "rotate(2deg)";
+        elementChild.style.transform = "rotate(6deg)";
         elementChild.style.zIndex = "999";
         elementChild.style.cursor = "grabbing";
         elementChild.style.boxShadow = "2px 8px 16px #00000042";
-        elementChild.style.outline = "2px solid white"
 
         elementChild.getElementsByClassName("card-btn")[0].style.display = "none";
         elementChild.getElementsByClassName("card-btn")[1].style.display = "none";
@@ -113,6 +125,7 @@ function dragElement(element) {
         document.onmousemove = null;
 
         element.style.position = "relative"
+        element.classList.add("app-card-transition")
         // Reset styles and location to the box
         elementChild.style.top = "";
         elementChild.style.left = "";
@@ -120,7 +133,6 @@ function dragElement(element) {
         elementChild.style.zIndex = ""
         elementChild.style.cursor = ""
         elementChild.style.boxShadow = ""
-        elementChild.style.outline = ""
 
         elementChild.getElementsByClassName("card-btn")[0].style.display = "flex";
         elementChild.getElementsByClassName("card-btn")[1].style.display = "flex";
