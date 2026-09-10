@@ -1,6 +1,6 @@
 // Get column container and project name input
 const columnContainer = document.getElementById("columns")
-const projectName = document.getElementById("projectName")
+const projectNameInput = document.getElementById("projectName")
 
 var columnWidth = 300;
 var projectFile = {} 
@@ -10,16 +10,14 @@ window.addEventListener('load', function() {
     loadPageContent(); 
 });
 
-// Refreshes the page content with the current project file data
 function loadPageContent() {
 
-    projectFile = getBoardData(); // Get project data
-    columnCount = projectFile.columns.length; // Get column count
+    projectFile = getBoardData();
+    columnCount = projectFile.columns.length;
 
-    columnContainer.innerHTML = ""; // Clear all previous columns
+    columnContainer.innerHTML = "";
 
-    // Load the project files name into the name input
-    projectName.value = projectFile.title;
+    projectNameInput.value = projectFile.title;
 
     // Load columns from file
     for (let i = 0; i < columnCount; i++) {
@@ -28,7 +26,7 @@ function loadPageContent() {
     
     // Load cards from file
     for (let i = 0; i < projectFile.cards.length; i++) {
-        generateCard(projectFile.cards[i]); // Generate and append card from card data at [i] in "cards": []
+        generateCard(projectFile.cards[i]);
     }
 
     updateColumnCounts()
