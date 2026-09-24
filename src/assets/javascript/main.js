@@ -1,6 +1,8 @@
 // Get column container and project name input
-const columnContainer = document.getElementById("columns")
-const projectNameInput = document.getElementById("projectName")
+const columnContainer = document.getElementById("columns");
+const projectNameInput = document.getElementById("projectName");
+
+const addColumnBtn = document.getElementById("createColumn");
 
 var columnWidth = 300;
 var projectFile = {} 
@@ -31,3 +33,7 @@ function loadPageContent() {
 
     updateColumnCounts()
 }
+
+addColumnBtn.addEventListener("click", function (e) {
+    createColumn("Another one");
+});

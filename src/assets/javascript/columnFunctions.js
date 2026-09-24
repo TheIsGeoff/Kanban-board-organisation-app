@@ -49,7 +49,7 @@ function onAddCard(element) {
 
     if (text != "") {
         
-        createCard(text, columnId)
+        createCard(text, columnId, "#d67040")
 
         createContainer.style.display = "none";
         columnFooter.style.display = "flex";

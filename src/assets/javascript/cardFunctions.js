@@ -23,5 +23,5 @@ function deleteCard(element) {
 }
 
 function openEditCard() {
-
+    
 }

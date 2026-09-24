@@ -1,12 +1,14 @@
 
 // Create card function
-function createCard(text, columnId) {
+function createCard(text, columnId, color) {
 
     var cardId = generateID();
 
     var card = {
         "id": cardId,
         "columnId": columnId,
+
+        "color": color,
 
         "text": text,
         "date": "null"
