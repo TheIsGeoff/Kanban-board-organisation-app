@@ -660,3 +660,13 @@ body {
     width: 32px;
     padding-right: 2px;
 }
+
+.tool-disabled {
+    opacity: 0.5;
+    cursor: not-allowed !important;
+}
+
+.tool-hidden {
+    display: none;
+    cursor: default!important;
+}
