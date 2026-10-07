@@ -15,9 +15,9 @@ function generateColumn(columnContent) {
                 <p class="column-card-count">0</p>
             </div>
             <div class="tool-disabled column-header-left">
-                <button data-column-id="`+ columnContent.id + `" class="column-button button-group-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">    <path        d="M19 12H5M5 12L12 19M5 12L12 5"        stroke="currentColor"        stroke-width="2"        stroke-linecap="round"        stroke-linejoin="round"    /></svg></button>
+                <button data-column-id="`+ columnContent.id + `" class="column-button tool-disabled button-group-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">    <path        d="M19 12H5M5 12L12 19M5 12L12 5"        stroke="currentColor"        stroke-width="2"        stroke-linecap="round"        stroke-linejoin="round"    /></svg></button>
                 <span class="button-group-devider"></span>
-                <button data-column-id="`+ columnContent.id + `" class="column-button button-group-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">    <path        d="M5 12H19M19 12L12 5M19 12L12 19"        stroke="currentColor"        stroke-width="2"        stroke-linecap="round"        stroke-linejoin="round"    /></svg></button>
+                <button data-column-id="`+ columnContent.id + `" class="column-button tool-disabled button-group-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">    <path        d="M5 12H19M19 12L12 5M19 12L12 19"        stroke="currentColor"        stroke-width="2"        stroke-linecap="round"        stroke-linejoin="round"    /></svg></button>
             </div>
         </header>
         <div class="column-content-container" id="` + columnContent.id +`Content"></div>
